@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-todos',
@@ -7,11 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosComponent implements OnInit {
 
-  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+  todos: any = [];
   
-  constructor() { }
+  constructor(private appService: AppService) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    // console.log('iniciou to-dos');
+    
+    this.todos = await this.appService.getApi('todos');
+    // console.log(this.todos);
+  }
+
+  alterouTarefa(id){
+    console.log(id);
   }
 
 }

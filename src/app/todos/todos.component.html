@@ -1,12 +1,12 @@
 <mat-card>
-    <mat-selection-list #shoes>
-        <mat-list-option *ngFor="let shoe of typesOfShoes">
-          {{shoe}}
+    <mat-selection-list #selectTodos>
+        <mat-list-option *ngFor="let todo of todos" (click)="alterouTarefa(todo.id)">
+          {{todo.title}}
         </mat-list-option>
       </mat-selection-list>
       
       <p>
-        Tarefas concluídas: {{shoes.selectedOptions.selected.length}}
+        Tarefas concluídas: {{selectTodos.selectedOptions.selected.length}}
       </p>
 </mat-card>
   

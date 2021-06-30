@@ -12,6 +12,8 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home/home.component';
 import { MatCardModule } from '@angular/material';
 import { TodosModule } from './todos/todos.module';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { TodosModule } from './todos/todos.module';
     MatIconModule,
     MatListModule,
     MatCardModule,
-    TodosModule
+    TodosModule,
+    CommonModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
