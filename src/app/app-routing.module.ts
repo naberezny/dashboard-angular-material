@@ -6,7 +6,7 @@ import { PostsComponent } from './pages/posts/posts.component';
 import { TodosComponent } from './pages/todos/todos.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
   {path: 'posts', component: PostsComponent},
   {path: 'albuns', component: AlbunsComponent},
   {path: 'todos', component: TodosComponent},

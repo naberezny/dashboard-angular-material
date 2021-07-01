@@ -10,7 +10,6 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   
-
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -22,7 +21,9 @@ export class AppComponent implements OnInit {
   ) {}
 
   async ngOnInit(){
-   
+   if(this.isHandset$){
+    console.log('nav');
+   }
   }
 
 }

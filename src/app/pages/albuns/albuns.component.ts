@@ -10,13 +10,29 @@ import { AppService } from 'src/app/app.service';
 export class AlbunsComponent implements OnInit {
 
   albuns: any = [];
+
+  limit_page = 9;
+  page=1;
+  params: any;
+
+  async getItens(){
+    this.params = '?page='+this.page+'&_limit='+ this.limit_page;
+    this.albuns = await this.appService.getApi('albums'+this.params);
+    // this.albuns = Object.assign({}, this.albuns);
+  }
+
+  adicionaMaisUmaPagina(){
+    this.page++;
+    this.limit_page += 9;
+    this.getItens();
+  }
   
   constructor(private appService: AppService) { }
 
-  async ngOnInit() {
+  ngOnInit() {
     // console.log('iniciou albuns');
+    this.getItens();
     
-    this.albuns = await this.appService.getApi('albums');
     console.log(this.albuns);
   }
 
