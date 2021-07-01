@@ -1,11 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { TodosComponent } from './todos/todos.component';
+import { AlbunsComponent } from './pages/albuns/albuns.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PostsComponent } from './pages/posts/posts.component';
+import { TodosComponent } from './pages/todos/todos.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'todos', component: TodosComponent}
+  {path: 'posts', component: PostsComponent},
+  {path: 'albuns', component: AlbunsComponent},
+  {path: 'todos', component: TodosComponent},
 ];
 
 @NgModule({

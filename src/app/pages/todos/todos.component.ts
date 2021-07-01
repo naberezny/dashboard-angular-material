@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppService } from '../app.service';
+import { AppService } from '../../app.service';
 
 @Component({
   selector: 'app-todos',
@@ -13,7 +13,7 @@ export class TodosComponent implements OnInit {
   constructor(private appService: AppService) { }
 
   async ngOnInit() {
-    // console.log('iniciou to-dos');
+    console.log('iniciou todo');
     
     this.todos = await this.appService.getApi('todos');
     // console.log(this.todos);

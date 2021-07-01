@@ -1,0 +1,12 @@
+
+<mat-expansion-panel (opened)="panelOpenState = true"
+(closed)="panelOpenState = false" *ngFor="let post of posts" class="mb-2">
+<mat-expansion-panel-header matTooltip="Postado pelo usuário {{post.userId}}">
+    <mat-panel-title class="d-flex">
+            <mat-icon aria-hidden="false" class="mr-2">account_circle</mat-icon>
+            {{post.title}}
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>{{post.body}}</p>
+    Post do usuário {{post.userId}}
+</mat-expansion-panel>
