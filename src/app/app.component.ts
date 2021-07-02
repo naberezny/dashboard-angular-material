@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -11,19 +12,22 @@ import { map, shareReplay } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
     );
+    
+    constructor(
+      private breakpointObserver: BreakpointObserver,
+      public appSerivce: AppService
+    ) {
+  }
 
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-  ) {}
+  ngOnInit(){
+  }
 
-  async ngOnInit(){
-   if(this.isHandset$){
-    console.log('nav');
-   }
+  ngAfterContentInit(){
+    // this.loading = true;
   }
 
 }

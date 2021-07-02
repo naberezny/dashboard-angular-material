@@ -1,3 +1,4 @@
+
 <mat-grid-list cols="3" rowHeight="2:1">
     <mat-grid-tile *ngFor="let albun of albuns">
         <mat-card class="">
@@ -11,4 +12,8 @@
         </div>
     </mat-grid-tile>
 </mat-grid-list>
-<button (click)="adicionaMaisUmaPagina()">ver mais</button>
+<div class="ver-mais-container">
+    <button class="btn-ver-mais" (click)="carregarMaisItens()">
+        <i class="material-icons mr-2">expand_more</i>ver mais
+    </button>
+</div>

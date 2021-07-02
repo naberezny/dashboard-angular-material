@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { TodosComponent } from './todos.component';
-import { MatCardModule, MatListModule } from '@angular/material';
+import { MatCardModule, MatCheckboxModule, MatListModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     MatListModule,
     MatCardModule,
+    MatCheckboxModule,
     HttpClientModule
   ],
   exports: [

@@ -11,29 +11,30 @@ export class AlbunsComponent implements OnInit {
 
   albuns: any = [];
 
-  limit_page = 9;
+  qtde_itens = 9;
+  limit_page = this.qtde_itens;
   page=1;
   params: any;
 
   async getItens(){
     this.params = '?page='+this.page+'&_limit='+ this.limit_page;
     this.albuns = await this.appService.getApi('albums'+this.params);
-    // this.albuns = Object.assign({}, this.albuns);
+    console.log(this.albuns);
   }
 
-  adicionaMaisUmaPagina(){
+  carregarMaisItens(){
     this.page++;
-    this.limit_page += 9;
+    this.limit_page += this.qtde_itens;
     this.getItens();
   }
   
   constructor(private appService: AppService) { }
 
   ngOnInit() {
-    // console.log('iniciou albuns');
     this.getItens();
-    
-    console.log(this.albuns);
+  }
+
+  ngAfterContentInit(){
   }
 
 }

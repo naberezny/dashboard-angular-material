@@ -1,7 +1,9 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <app-menu-navegacao>
-  </app-menu-navegacao> -->
+<!-- Loader -->
+<div *ngIf="appSerivce.loading" class="loader-container">
+  <div class="loader"></div>
+</div>
 
+<!-- App -->
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
@@ -10,10 +12,10 @@
     <mat-toolbar><div routerLink="" class="logo"></div></mat-toolbar>
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink=""><mat-icon matListIcon>home</mat-icon> Home</a>
-      <a mat-list-item routerLink="posts"><mat-icon matListIcon>rss_feed</mat-icon> POSTAGENS</a>
-      <a mat-list-item routerLink="albuns"><mat-icon matListIcon>album</mat-icon> ALBUNS</a>
-      <a mat-list-item routerLink="todos"><mat-icon matListIcon>task_alt</mat-icon> TO-DOs</a>
+      <a mat-list-item routerLink="" class="menu-item"><mat-icon matListIcon>home</mat-icon> Home</a>
+      <a mat-list-item routerLink="posts" class="menu-item"><mat-icon matListIcon>rss_feed</mat-icon> POSTAGENS</a>
+      <a mat-list-item routerLink="albuns" class="menu-item"><mat-icon matListIcon>album</mat-icon> ALBUNS</a>
+      <a mat-list-item routerLink="todos" class="menu-item"><mat-icon matListIcon>task_alt</mat-icon> TO-DOs</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -29,14 +31,11 @@
       <span>Desafio Framework</span>
     </mat-toolbar>
     
-    <!-- Add Content Here -->
+    <!-- Conteúdo das paginas -->
     <div class="container">
       <router-outlet></router-outlet>
-
-    </div>
-    
+    </div>   
     
   </mat-sidenav-content>
 </mat-sidenav-container>
-
 

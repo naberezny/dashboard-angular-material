@@ -1,22 +1,71 @@
-.container{
-  padding: 15px
+.container {
+    padding: 15px
 }
 
 .sidenav-container {
     height: 100%;
-  }
-  
-  .sidenav {
+}
+
+.sidenav {
     width: 200px;
-  }
-  
-  .sidenav .mat-toolbar {
+}
+
+.sidenav .mat-toolbar {
     background: inherit;
-  }
-  
-  .mat-toolbar.mat-primary {
+}
+
+.mat-toolbar.mat-primary {
     position: sticky;
     top: 0;
     z-index: 1;
-  }
-  
+}
+
+.logo {
+    background-image: url('../assets/svg/logo.svg');
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background: #5f34733f!important;
+    color: black !important;
+}
+
+.menu-item:focus {
+    background: var(--cor-primaria) !important;
+    color: white !important;
+}
+
+.mat-primary {
+    background: var(--cor-primaria)!important;
+}
+
+.loader-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background: #ffffffa8;
+    z-index: 999;
+}
+
+.loader {
+    animation: is-rotating 1s infinite;
+    border: 6px solid #e5e5e5;
+    border-radius: 50%;
+    border-top-color: var(--cor-primaria);
+    height: 50px;
+    width: 50px;
+}
+
+@keyframes is-rotating {
+    to {
+        transform: rotate(1turn);
+    }
+}

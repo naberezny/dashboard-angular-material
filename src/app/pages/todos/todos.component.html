@@ -1,12 +1,24 @@
 <mat-card>
-    <mat-selection-list #selectTodos>
-        <mat-list-option *ngFor="let todo of todos" (click)="alterouTarefa(todo.id)">
-          {{todo.title}}
+    <!-- <mat-selection-list #selectTodos>
+        <mat-list-option *ngFor="let todo of listTodos" #todo.id [selected]="todo.completed == true">
+          {{todo.title }}, {{todo.completed}}
         </mat-list-option>
-      </mat-selection-list>
-      
-      <p>
-        Tarefas concluídas: {{selectTodos.selectedOptions.selected.length}}
-      </p>
+    </mat-selection-list> -->
+
+    <section class="example-section" *ngFor="let todo of listTodos">
+        <mat-checkbox [checked]="todo.completed" (change)="changeCheck($event)" class="todo">{{todo.title}}</mat-checkbox>
+    </section>
+
+    <p class="contador-tarefas">
+        Tarefas concluídas: {{checkedItens}}
+    </p>
 </mat-card>
-  
+
+<div class="ver-mais-container mt-2">
+    <!-- <button class="btn-ver-mais" (click)="carregarMaisItens()">
+      <i class="material-icons mr-2">expand_more</i>ver mais
+  </button> -->
+    <button class="btn-pagination" *ngFor="let in of counter(todos.length / qtde_itens); let i = index" (click)="changePage(i+1)">
+      {{i+1}}
+  </button>
+</div>

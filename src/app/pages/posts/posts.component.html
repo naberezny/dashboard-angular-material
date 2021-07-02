@@ -1,12 +1,17 @@
-
-<mat-expansion-panel (opened)="panelOpenState = true"
-(closed)="panelOpenState = false" *ngFor="let post of posts" class="mb-2">
-<mat-expansion-panel-header matTooltip="Postado pelo usuário {{post.userId}}">
-    <mat-panel-title class="d-flex">
-            <mat-icon aria-hidden="false" class="mr-2">account_circle</mat-icon>
+<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false" *ngFor="let post of posts" class="mb-2">
+    <mat-expansion-panel-header>
+        <mat-panel-title class="d-flex align-itens-center">
+            <img matTooltip="Postado pelo usuário {{post.userId}}" src="http://lorempixel.com/200/200/cats/{{post.userId}}" width="30px" heigth="30px" class="avatar-post">
+            <!-- <mat-icon matTooltip="Postado pelo usuário {{post.userId}}" aria-hidden="false" class="mr-2"></mat-icon> -->
             {{post.title}}
         </mat-panel-title>
     </mat-expansion-panel-header>
     <p>{{post.body}}</p>
     Post do usuário {{post.userId}}
 </mat-expansion-panel>
+
+<div class="ver-mais-container">
+    <button class="btn-ver-mais" (click)="carregarMaisItens()">
+        <i class="material-icons mr-2">expand_more</i>ver mais
+    </button>
+</div>

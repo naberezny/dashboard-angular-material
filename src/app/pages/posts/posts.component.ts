@@ -9,14 +9,28 @@ import { AppService } from 'src/app/app.service';
 export class PostsComponent implements OnInit {
 
   posts: any = [];
+
+  qtde_itens = 12;
+  limit_page = this.qtde_itens;
+  page=1;
+  params: any;
+
+  async getItens(){
+    this.params = '?page='+this.page+'&_limit='+ this.limit_page;
+    this.posts = await this.appService.getApi('posts'+this.params);    
+    console.log(this.posts);
+  }
+
+  carregarMaisItens(){
+    this.page++;
+    this.limit_page += this.qtde_itens;
+    this.getItens();
+  }
   
   constructor(private appService: AppService) { }
 
-  async ngOnInit() {
-    console.log('iniciou posts');
-    
-    this.posts = await this.appService.getApi('posts');
-    console.log(this.posts);
+  ngOnInit() {
+    this.getItens();    
   }
 
 }
