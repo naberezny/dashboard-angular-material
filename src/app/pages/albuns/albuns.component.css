@@ -3,8 +3,7 @@
     background-size: cover;
 }
 
-.truncate {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.mat-card-avatar {
+    height: 30px;
+    width: 30px;
 }

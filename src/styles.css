@@ -85,3 +85,9 @@ body {
     background: purple;
     color: white;
 }
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

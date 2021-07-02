@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AlbunsComponent } from './albuns.component';
 import { MatCardModule, MatPaginatorModule } from '@angular/material';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [AlbunsComponent],
@@ -10,7 +11,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CommonModule,
     MatCardModule,
     MatGridListModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    FlexLayoutModule
   ],
   exports:[
     AlbunsComponent

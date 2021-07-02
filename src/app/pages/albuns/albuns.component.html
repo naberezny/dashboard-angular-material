@@ -1,28 +1,24 @@
-<div fxLayout="row wrap" f1q  xLayoutAlign="start center">
-    <div style="margin:5px" *ngFor="let albun of albuns">
-        <mat-card class="" fxLayout="row" fxFlex="50%" fxFlex.gt-sm="25%">
+<div fxLayout="row wrap" xLayoutAlign="space-around center">
+    <div style="margin:1%" *ngFor="let albun of albuns" 
+    fxFlex="18%"
+    fxFlex.lt-md="0 1 calc(30% - 11px)"
+    fxFlex.lt-sm="45%">
+        <mat-card class="example-card">
             <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Album #{{albun.id}}</mat-card-title>
-                <mat-card-subtitle class="truncate" style="max-width: 150px">{{albun.title}}</mat-card-subtitle>
-            </mat-card-header>            
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>#{{albun.id}}</mat-card-title>
+            <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+            </mat-card-header>
+            <img mat-card-image src="http://lorempixel.com/400/200/people/{{albun.id}}/Album-{{albun.id}}/" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+            <p class="truncate">{{albun.title}}</p>
+            </mat-card-content>
         </mat-card>
     </div>
+
 </div>
-<mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile *ngFor="let albun of albuns">
-        <mat-card class="">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Album #{{albun.id}}</mat-card-title>
-                <mat-card-subtitle class="truncate" style="max-width: 150px">{{albun.title}}</mat-card-subtitle>
-            </mat-card-header>            
-        </mat-card>
-        <div>
-        </div>
-    </mat-grid-tile>
-</mat-grid-list>
-<div class="ver-mais-container">
+
+<div class="ver-mais-container mt-2">
     <button class="btn-ver-mais" (click)="carregarMaisItens()">
         <i class="material-icons mr-2">expand_more</i>ver mais
     </button>

@@ -1,4 +1,5 @@
-<mat-card>
+<div fxLayout="column" fxLayoutAlign="start start">
+<mat-card fxFlex="100%" fxFill>
     <!-- <mat-selection-list #selectTodos>
         <mat-list-option *ngFor="let todo of listTodos" #todo.id [selected]="todo.completed == true">
           {{todo.title }}, {{todo.completed}}
@@ -6,13 +7,16 @@
     </mat-selection-list> -->
 
     <mat-card class="card-todo" *ngFor="let todo of listTodos">
-        <mat-checkbox [checked]="todo.completed" (change)="changeCheck($event)" class="todo">{{todo.title}}</mat-checkbox>
+        <mat-checkbox [checked]="todo.completed" (change)="changeCheck($event)" class="todo">
+          <span class="truncate">{{todo.title}}</span>
+        </mat-checkbox>
     </mat-card>
 
     <p class="contador-tarefas">
         Tarefas concluídas: {{checkedItens}}
     </p>
 </mat-card>
+</div>
 
 <div class="ver-mais-container mt-2">
     <!-- <button class="btn-ver-mais" (click)="carregarMaisItens()">

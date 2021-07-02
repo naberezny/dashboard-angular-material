@@ -11,7 +11,7 @@ export class AlbunsComponent implements OnInit {
 
   albuns: any = [];
 
-  qtde_itens = 9;
+  qtde_itens = 20;
   limit_page = this.qtde_itens;
   page=1;
   params: any;

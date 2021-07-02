@@ -2,3 +2,8 @@
     background-image: url('../../../assets/img/joao.png');
     background-size: cover;
 }
+
+.mat-card-avatar{
+    width: 70px;
+    height: 70px;
+}
