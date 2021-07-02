@@ -21,3 +21,8 @@
     background: purple;
     color: white;
 }
+
+.card-todo {
+    padding: 4px;
+    margin: 3px;
+}

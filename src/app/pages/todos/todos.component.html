@@ -5,9 +5,9 @@
         </mat-list-option>
     </mat-selection-list> -->
 
-    <section class="example-section" *ngFor="let todo of listTodos">
+    <mat-card class="card-todo" *ngFor="let todo of listTodos">
         <mat-checkbox [checked]="todo.completed" (change)="changeCheck($event)" class="todo">{{todo.title}}</mat-checkbox>
-    </section>
+    </mat-card>
 
     <p class="contador-tarefas">
         Tarefas concluídas: {{checkedItens}}

@@ -1,4 +1,14 @@
-
+<div fxLayout="row wrap" f1q  xLayoutAlign="start center">
+    <div style="margin:5px" *ngFor="let albun of albuns">
+        <mat-card class="" fxLayout="row" fxFlex="50%" fxFlex.gt-sm="25%">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Album #{{albun.id}}</mat-card-title>
+                <mat-card-subtitle class="truncate" style="max-width: 150px">{{albun.title}}</mat-card-subtitle>
+            </mat-card-header>            
+        </mat-card>
+    </div>
+</div>
 <mat-grid-list cols="3" rowHeight="2:1">
     <mat-grid-tile *ngFor="let albun of albuns">
         <mat-card class="">
