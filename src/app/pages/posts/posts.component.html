@@ -8,6 +8,8 @@
     </mat-expansion-panel-header>
     <p>{{post.body}}</p>
     Post do usuário {{post.userId}}
+    <p>id: {{post.id}}</p>
+    <a [routerLink]="['post', post.id]">abrir post {{post.id}}</a>
 </mat-expansion-panel>
 
 <div class="ver-mais-container">
